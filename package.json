@@ -1,0 +1,37 @@
+{
+  "name": "bootcamp-assignment",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "typeorm": "typeorm-ts-node-commonjs",
+    "migration:generate": "yarn typeorm migration:generate -d src/database/index.ts",
+    "migration:run": "yarn typeorm migration:run -d src/database/index.ts",
+    "migration:revert": "yarn typeorm migration:revert -d src/database/index.ts",
+    "seed": "ts-node src/database/seed.ts",
+    "proof": "ts-node src/scripts/proof-transaction.ts"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-validator": "^7.3.2",
+    "helmet": "^8.1.0",
+    "morgan": "^1.10.1",
+    "node-cron": "^4.2.1",
+    "reflect-metadata": "^0.2.2",
+    "sqlite3": "^6.0.1",
+    "typeorm": "^0.3.28"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/morgan": "^1.9.10",
+    "@types/node": "^25.6.0",
+    "@types/node-cron": "^3.0.11",
+    "nodemon": "^3.1.14",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^6.0.3"
+  }
+}
